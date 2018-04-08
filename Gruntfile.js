@@ -109,9 +109,9 @@ module.exports = function (grunt) {
             ];
             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
             // Serve static files
-            options.base.forEach(function(base) {
-              middlewares.push(connect.static(base));
-            });
+            // options.base.forEach(function(base) {
+            //   middlewares.push(connect.static(base));
+            // });
             return middlewares;
           }
         }
@@ -464,6 +464,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
+      'configureProxies:server',
       'watch'
     ]);
   });
