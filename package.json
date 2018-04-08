@@ -39,6 +39,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
+    "angular-resource": "^1.6.9",
     "grunt-karma": "^2.0.0"
   }
 }

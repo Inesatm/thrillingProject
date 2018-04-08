@@ -1,1 +1,34 @@
-<p>This is the about view.</p>
+<div class="container">
+  <h1>Add a consumer :</h1>
+  <div class="col-md-6 ">
+    <form class="htmlform" ng-controller="CreateCtrl">
+      <h3>Basic informations :</h3>
+      <input
+        class="form-control"
+        placeholder="Person Name"
+        name="name"
+        ng-model="person.name"
+        required pattern=".{2,}" title="Please enter 2 characters or more." />
+      <input
+        class="form-control"
+        placeholder="Person Surname"
+        name="surname"
+        ng-model="person.surname"
+        required pattern=".{2,}" title="Please enter 2 characters or more." />
+      <input
+        class="form-control"
+        placeholder="person@adress.com"
+        name="email"
+        ng-model="person.email"
+        required type="email"/>
+
+      <br/>
+
+      <input type="button" class="btn btn-primary" value="Ajouter" ng-click="create()" />
+
+      <br/><br/>
+    </form>
+  </div>
+
+</div>
+</div>

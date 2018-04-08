@@ -79,13 +79,19 @@ module.exports = function (grunt) {
       proxies: [{
         context: '/rest/person/create', // the context of the data service
         host: 'localhost', // wherever the data service is running
-        port: 8081 // the port that the data service is running on
+        port: 8080 // the port that the data service is running on
       },
         {
           context: '/rest/person/getpersons', // the context of the data service
           host: 'localhost', // wherever the data service is running
-          port: 8081 // the port that the data service is running on
+          port: 8080 // the port that the data service is running on
         }],
+      // proxies: [{
+      //   //TODCHANGE
+      //   context: '/rest/', // the context of the data service
+      //   host: 'localhost', // wherever the data service is running
+      //   port: 8080 // the port that the data service is running on
+      // }],
       livereload: {
         options: {
           open: true,
