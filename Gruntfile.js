@@ -103,9 +103,10 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),connect().use(function (req, res, next) {
-                res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-                res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
                 res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', '*');
+                res.setHeader('Content-Type: application/json; charset=UTF_8');
+
 
                 return next();
               }),
@@ -117,9 +118,9 @@ module.exports = function (grunt) {
             ];
             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
             // Serve static files
-            options.base.forEach(function(base) {
-              middlewares.push(connect.static(base));
-            });
+            // options.base.forEach(function(base) {
+            //   middlewares.push(connect.static(base));
+            // });
             return middlewares;
           }
         }
