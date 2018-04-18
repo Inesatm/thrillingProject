@@ -1,1 +1,28 @@
-<p>This is the persons view.</p>
+<!--<h1>{{h1}}</h1>-->
+
+<table id="tab" class="table table-bordered table-striped" ng-controller="PersonsCtrl">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr ng-repeat="person in personnes">
+    <td>{{person.nom}}</td>
+    <td>{{person.prenom}}</td>
+    <td>{{person.mail}}</td>
+  </tr>
+  </tbody>
+
+  <tfoot>
+  <tr>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Email</th>
+  </tr>
+  </tfoot>
+</table>
+

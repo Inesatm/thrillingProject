@@ -40,6 +40,10 @@
   },
   "dependencies": {
     "angular-resource": "^1.6.9",
+    "angular-ui-router": "^1.0.3",
     "grunt-karma": "^2.0.0"
+  },
+  "scripts": {
+    "test": "karma start test\\karma.conf.js"
   }
 }

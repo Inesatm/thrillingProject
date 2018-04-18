@@ -12,18 +12,19 @@
 angular.module('thrillingProjectApp')
 .controller('CreateCtrl',['$scope', 'CreatePerson', function ($scope, CreatePerson) {
   $scope.person 			= {};
-  $scope.person.name		= "  ";
-  $scope.person.surname 	= "  ";
-  $scope.person.email 	= "  ";
+  $scope.person.name		= "";
+  $scope.person.surname 	= "";
+  $scope.person.email 	= "";
   
   /*
   * Called when the user click the create button
   * */
   $scope.create = function(){
     var newP = new CreatePerson();
-    newP.email 	= $scope.person.email;
     newP.nom 	= $scope.person.name;
     newP.prenom 	= $scope.person.surname;
+    newP.email 	= $scope.person.email;
+   
     console.log("waah", newP);
     
     newP.$save();
@@ -39,5 +40,5 @@ angular.module('thrillingProjectApp')
 * Factory to add a person
 */
 angular.module('thrillingProjectApp').factory('CreatePerson', ['$resource', function($resource){
-  return $resource("rest/person/create/", {}, {});
+  return $resource("/person/create/", {}, {});
 }]);

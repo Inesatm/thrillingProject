@@ -75,23 +75,24 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+
       //ici
-      proxies: [{
-        context: '/rest/person/create', // the context of the data service
-        host: 'localhost', // wherever the data service is running
-        port: 8080 // the port that the data service is running on
-      },
-        {
-          context: '/rest/person/getpersons', // the context of the data service
-          host: 'localhost', // wherever the data service is running
-          port: 8080 // the port that the data service is running on
-        }],
       // proxies: [{
-      //   //TODCHANGE
-      //   context: '/rest/', // the context of the data service
+      //   context: '/person/create', // the context of the data service
       //   host: 'localhost', // wherever the data service is running
       //   port: 8080 // the port that the data service is running on
-      // }],
+      // },
+      //   {
+      //     context: '/person/', // the context of the data service
+      //     host: 'localhost', // wherever the data service is running
+      //     port: 8080 // the port that the data service is running on
+      //   }],
+      proxies: [{
+        //TODCHANGE
+        context: '/rest/', // the context of the data service
+        host: 'localhost', // wherever the data service is running
+        port: 8080 // the port that the data service is running on
+      }],
       livereload: {
         options: {
           open: true,
@@ -102,9 +103,10 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),connect().use(function (req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
-                res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
                 res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+                res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+                res.setHeader('Access-Control-Allow-Origin', '*');
+
                 return next();
               }),
               connect().use(
@@ -115,9 +117,9 @@ module.exports = function (grunt) {
             ];
             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
             // Serve static files
-            // options.base.forEach(function(base) {
-            //   middlewares.push(connect.static(base));
-            // });
+            options.base.forEach(function(base) {
+              middlewares.push(connect.static(base));
+            });
             return middlewares;
           }
         }
