@@ -12,27 +12,26 @@
 angular.module('thrillingProjectApp')
   .controller('CreateCtrl',['$scope', 'CreatePerson', function ($scope,CreatePerson) {
     $scope.person 			= {};
-    // $scope.person.firstName 	= "";
-    // $scope.person.lastName		= "";
-    // $scope.person.email 	= "";
-
+    $scope.person.FirstName 	= "";
+    $scope. person.lastName 	= "";
+    $scope.person.Mail 	= "";
     /*
     * Called when the user click the create button
     * */
     $scope.create = function(){
       var newP = new CreatePerson();
-      newP.firstName 	= $scope.person.firstName;
+      newP.FirstName 	= $scope.person.FirstName;
       newP.lastName 	= $scope.person.lastName;
-      newP.email 	= $scope.person.email;
+      newP.Mail 	= $scope.person.Mail;
 
       console.log("waah", newP);
 
       newP.$save();
 
       // //update the person scope value
-      // $scope.person.email 	= "";
-      // $scope.person.firstName		= "";
-      // $scope.person.lastName	= "";
+      $scope.person.email 	= "";
+      $scope.person.firstName		= "";
+      $scope.person.lastName	= "";
     };
 
   }]);
