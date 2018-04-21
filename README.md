@@ -1,7 +1,5 @@
 # TP 7 Front-end AngularJs, Backend TP4 (JPA)
 
-Lien vers le  tp JPA 
-
 [Lien vers le  tp JPA](https://github.com/TPSIRAtmaniEspinasse/JPA)
 
 ## Pour lancer le tp Build & development
