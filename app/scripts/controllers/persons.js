@@ -13,7 +13,7 @@ angular.module('thrillingProjectApp')
 
     var listP = getP.query(function(){
       for(var i = 0; i < listP.length; i++){
-        $scope.personnes.push({	 "Prenom":listP[i]["firstName"],"Nom": listP[i]["lastName"], "Mail":listP[i]["email"]});
+        $scope.personnes.push({	 "prenom":listP[i]["firstName"],"nom": listP[i]["lastName"], "mail":listP[i]["email"]});
       }
     });
   }]);
